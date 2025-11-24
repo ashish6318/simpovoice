@@ -1,0 +1,11 @@
+streamlit
+groq
+edge-tts
+python-dotenv
+SpeechRecognition
+pyaudio
+pydub
+sounddevice
+soundfile
+numpy
+plotly
