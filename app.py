@@ -90,8 +90,9 @@ for message in st.session_state.messages:
         
         # Play audio for assistant messages
         if message["role"] == "assistant" and "audio_file" in message:
-            if os.path.exists(message["audio_file"]):
-                with open(message["audio_file"], "rb") as audio_file:
+            audio_path = message.get("audio_file")
+            if audio_path and isinstance(audio_path, str) and os.path.exists(audio_path):
+                with open(audio_path, "rb") as audio_file:
                     st.audio(audio_file.read(), format="audio/mp3")
 
 # Voice input using Streamlit component
