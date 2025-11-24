@@ -16,6 +16,11 @@ import time
 # Load environment variables
 load_dotenv()
 
+# Initialize database on first run
+from database import init_db
+if not os.path.exists(config.database.db_path):
+    init_db()
+
 # Page configuration
 st.set_page_config(
     page_title="Simplotel Voice Assistant",
